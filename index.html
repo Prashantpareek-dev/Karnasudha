@@ -786,7 +786,7 @@
         }
 
         @media (max-width: 650px) {
-           
+
 
             .site-header>.flex.items-center {
                 display: flex;
@@ -2760,6 +2760,53 @@
             }
         }
     </style>
+    <style>
+        /* Header CTA shining effect */
+        .order-btn {
+            position: relative;
+            overflow: hidden;
+            font-family: 'Arya', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
+        }
+
+        .order-btn .shine {
+            position: absolute;
+            top: 0;
+            left: -80%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-20deg);
+            transition: left 0.9s ease;
+            pointer-events: none;
+            filter: blur(6px);
+            opacity: 0.95;
+        }
+
+        .order-btn:hover .shine,
+        .order-btn:focus .shine {
+            left: 150%;
+        }
+
+        .order-btn:focus {
+            outline: none;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 0 0 6px rgba(250, 204, 21, 0.12)
+        }
+
+        .order-btn .animate-bounce {
+            display: inline-block
+        }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .order-btn .animate-bounce {
+                animation: none
+            }
+
+            .order-btn .shine {
+                transition: none
+            }
+        }
+    </style>
 </head>
 
 <body class="font-inknut leading-relaxed text-brand-accent"
@@ -2805,41 +2852,13 @@
             </button>
         </header>
 
-        <style>
-        /* Header CTA shining effect */
-        .order-btn{position:relative;overflow:hidden;font-family:'Arya', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif}
-        .order-btn .shine{
-            position:absolute;
-            top:0;left:-80%;
-            width:40%;height:100%;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-20deg);
-            transition: left 0.9s ease;
-            pointer-events:none;
-            filter: blur(6px);
-            opacity:0.95;
-        }
-        .order-btn:hover .shine,
-        .order-btn:focus .shine{
-            left:150%;
-        }
-        .order-btn:focus{outline:none;box-shadow:0 6px 18px rgba(0,0,0,0.25), 0 0 0 6px rgba(250,204,21,0.12)}
-        .order-btn .animate-bounce{display:inline-block}
-        /* Respect reduced motion preferences */
-        @media (prefers-reduced-motion: reduce){
-            .order-btn .animate-bounce{animation:none}
-            .order-btn .shine{transition:none}
-        }
-        </style>
-        </header>
-
         <!-- Main Content -->
         <main style="background: transparent;">
 
             <!-- Hero section -->
             <section class="hero-section" aria-label="Hero"
                 style="background: linear-gradient(120deg, var(--p1-primary)0%, var(--p1-accent)) 100%; border-bottom: 3px solid rgba(255,255,255,0.2);">
-                <img src="./Image/Hero.png" alt="Ear care hero" class="hero-image"
+                <img src="./Image/Hero.avif" alt="Ear care hero" class="hero-image mt-2"
                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22%3E%3Cdefs%3E%3ClinearGradient id=%22h1%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23fef3c7%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%23f59e0b%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22url(%23h1)%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22%23000%22%3E%F0%9F%A4%99 Ear Care%3C/text%3E%3C/svg%3E'">
 
                 <div class="hero-caption" role="note">
@@ -2894,7 +2913,7 @@
                         <!-- Problem 1 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col items-start gap-6">
-                                <img src="./Image/Problem1.png" alt="Infection" class="problem-card-image"
+                                <img src="./Image/Problem1.avif" alt="Infection" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g1%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23ef4444%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23dc2626%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g1)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%F0%9F%A6%A0%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -2919,7 +2938,7 @@
                         <!-- Problem 2 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col  items-start gap-6">
-                                <img src="./Image/Problem2.png" alt="Pressure" class="problem-card-image"
+                                <img src="./Image/Problem2.avif" alt="Pressure" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g2%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23f59e0b%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23d97706%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g2)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -2945,7 +2964,7 @@
                         <!-- Problem 3 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col  items-start gap-6">
-                                <img src="./Image/Problem3.png" alt="Tissue Damage" class="problem-card-image"
+                                <img src="./Image/Problem3.avif" alt="Tissue Damage" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g3%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23ef4444%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23b91c1c%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g3)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%F0%9F%A9%B8%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -2970,7 +2989,7 @@
                         <!-- Problem 4 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col  items-start gap-6">
-                                <img src="./Image/Problem5.png" alt="Nerve Stress" class="problem-card-image"
+                                <img src="./Image/Problem5.avif" alt="Nerve Stress" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g4%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23dc2626%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23991b1b%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g4)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -2995,7 +3014,7 @@
                         <!-- Problem 5 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col  items-start gap-6">
-                                <img src="./Image/Problem4.png" alt="Signal Break" class="problem-card-image"
+                                <img src="./Image/Problem4.avif" alt="Signal Break" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g5%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23f59e0b%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23d97706%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g5)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%F0%9F%93%B6%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -3020,7 +3039,7 @@
                         <!-- Problem 6 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col  items-start gap-6">
-                                <img src="./Image/Problem6.png" alt="Inner Ear Damage" class="problem-card-image"
+                                <img src="./Image/Problem6.avif" alt="Inner Ear Damage" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g6%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23ef4444%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23dc2626%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g6)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%F0%9F%91%82%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -3045,7 +3064,7 @@
                         <!-- Problem 7 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col  items-start gap-6">
-                                <img src="./Image/Problem7.png" alt="Irreversible Damage" class="problem-card-image"
+                                <img src="./Image/Problem7.avif" alt="Irreversible Damage" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g7%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23dc2626%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23991b1b%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g7)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%E2%9D%8C%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -3071,7 +3090,7 @@
                         <!-- Problem 8 -->
                         <div class="problem-card bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
                             <div class="flex flex-col  items-start gap-6">
-                                <img src="./Image/Problem8.png" alt="Permanent Hearing Loss" class="problem-card-image"
+                                <img src="./Image/Problem8.avif" alt="Permanent Hearing Loss" class="problem-card-image"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g8%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23b91c1c%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%237f1d1d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g8)%22 width=%22200%22 height=%22200%22 rx=%2215%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22%3E%E2%9A%A0%EF%B8%8F%3C/text%3E%3C/svg%3E'">
                                 <div class="flex-1 flex items-start gap-4">
                                     <div
@@ -3224,7 +3243,7 @@
                             </div>
 
                             <!-- Product Poster -->
-                            <img src="./Image/Intro.png" alt="KaranSudha Capsule Introduction"
+                            <img src="./Image/Intro.avif" alt="KaranSudha Capsule Introduction"
                                 class="product-poster w-full h-auto"
                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22800%22%3E%3Cdefs%3E%3ClinearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%234fa34f;stop-opacity:1%22 /%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%232f7f2f;stop-opacity:1%22 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23grad)%22 width=%22800%22 height=%22800%22/%3E%3Ctext x=%2250%25%22 y=%2235%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22 font-family=%22Arial%22 font-weight=%22bold%22%3EKaranSudha%3C/text%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3ECapsule%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23fbbf24%22 font-size=%2240%22 font-family=%22Arial%22%3E%F0%9F%8C%BF%20Ayurvedic%20%F0%9F%8C%BF%3C/text%3E%3C/svg%3E'">
                         </div>
@@ -3316,7 +3335,7 @@
                                         <div class="order-2 md:order-1 flex justify-center">
                                             <div class="relative image-container">
                                                 <div class="rotating-ring"></div>
-                                                <img src="./Image/Improve3.png" alt="Infection Control"
+                                                <img src="./Image/Improve3.avif" alt="Infection Control"
                                                     class="step-image w-48 h-48 object-cover shadow-xl relative z-10"
                                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%234fa34f%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22 font-family=%22Arial%22%3E%F0%9F%A6%A0%3C/text%3E%3C/svg%3E'">
                                                 <div
@@ -3397,7 +3416,7 @@
                                         <div class="flex justify-center">
                                             <div class="relative image-container">
                                                 <div class="rotating-ring"></div>
-                                                <img src="./Image/Improve1.png" alt="Inflammation Reduction"
+                                                <img src="./Image/Improve1.avif" alt="Inflammation Reduction"
                                                     class="step-image w-48 h-48 object-cover shadow-xl relative z-10"
                                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%234fa34f%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22 font-family=%22Arial%22%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E'">
                                                 <div
@@ -3420,7 +3439,7 @@
                                         <div class="order-2 md:order-1 flex justify-center">
                                             <div class="relative image-container">
                                                 <div class="rotating-ring"></div>
-                                                <img src="./Image/Improve2.png" alt="Hearing Nerve Support"
+                                                <img src="./Image/Improve2.avif" alt="Hearing Nerve Support"
                                                     class="step-image w-48 h-48 object-cover shadow-xl relative z-10"
                                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%234fa34f%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22 font-family=%22Arial%22%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E'">
                                                 <div
@@ -3551,7 +3570,7 @@
                     <!-- Large Poster Image -->
                     <div class="mb-16">
                         <div class="max-w-5xl mx-auto">
-                            <img src="./Image/Ayurvedic.png" alt="Ayurvedic & Doctor Recommendation"
+                            <img src="./Image/Ayurvedic.avif" alt="Ayurvedic & Doctor Recommendation"
                                 class="poster-image w-full h-auto rounded-3xl shadow-2xl"
                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22600%22%3E%3Cdefs%3E%3ClinearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%234fa34f;stop-opacity:1%22 /%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%232f7f2f;stop-opacity:1%22 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23grad)%22 width=%221200%22 height=%22600%22 rx=%2230%22/%3E%3Ctext x=%2250%25%22 y=%2235%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22 font-weight=%22bold%22%3E%F0%9F%91%A8%E2%80%8D%E2%9A%95%EF%B8%8F%20Doctor%20%2B%20Ayurveda%3C/text%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22 font-family=%22Arial%22%3EExpert-Backed%20Ear%20Care%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22 font-family=%22Arial%22 opacity=%220.9%22%3ESafe%20%E2%80%A2%20Natural%20%E2%80%A2%20Effective%3C/text%3E%3C/svg%3E'">
                         </div>
@@ -3742,7 +3761,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-2">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Ind1.png" alt="नीम"
+                                            <img src="./Image/Ind1.avif" alt="नीम"
                                                 class="ingredient-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -3779,7 +3798,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-2">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Ind2.png" alt="हरितकी"
+                                            <img src="./Image/Ind2.avif" alt="हरितकी"
                                                 class="ingredient-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -3816,7 +3835,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-2">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Ind3.png" alt="पिप्पली"
+                                            <img src="./Image/Ind3.avif" alt="पिप्पली"
                                                 class="ingredient-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -3853,7 +3872,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-2">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Ind4.png" alt="वाचा"
+                                            <img src="./Image/Ind4.avif" alt="वाचा"
                                                 class="ingredient-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -3890,7 +3909,8 @@
             </section>
 
             <!-- Usage Instructions Section -->
-            <section style="background: linear-gradient(135deg, var(--brand-primary) 0%, #1b5e20 100%);" class="p-4 overflow-hidden relative">
+            <section style="background: linear-gradient(135deg, var(--brand-primary) 0%, #1b5e20 100%);"
+                class="p-4 overflow-hidden relative">
 
                 <!-- Background Decorations -->
                 <div class="bg-decoration leaf-pattern" style="top: 10%; left: 5%;"></div>
@@ -4179,7 +4199,7 @@
 
                                 <!-- Product Image -->
                                 <div class="mb-8 mt-4">
-                                    <img src="./Image/Product1.png" alt="KaranSudha Capsule"
+                                    <img src="./Image/Product1.avif" alt="KaranSudha Capsule"
                                         class="w-34 max-[450px]:w-26 h-34 max-[450px]:h-26 max-w-md mx-auto"
                                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%234fa34f%22 width=%22400%22 height=%22400%22 rx=%2220%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22 font-weight=%22bold%22%3EKaranSudha%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22 font-family=%22Arial%22%3ECapsule%3C/text%3E%3C/svg%3E'">
                                 </div>
@@ -4284,7 +4304,7 @@
                             <div class="bg-white bg-opacity-15 backdrop-blur-lg rounded-3xl p-6 mb-8 ">
                                 <div class="flex flex-col items-center gap-6">
                                     <div class="flex-shrink-0">
-                                        <img src="./Image/doctor.png" alt="Specialist Doctor"
+                                        <img src="./Image/doctor.avif" alt="Specialist Doctor"
                                             class="doctor-image w-42 h-42 rounded-full object-cover border-4 border-white"
                                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Ccircle fill=%22%234fa34f%22 cx=%2275%22 cy=%2275%22 r=%2275%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%91%A8%E2%80%8D%E2%9A%95%EF%B8%8F%3C/text%3E%3C/svg%3E'">
                                     </div>
@@ -4440,7 +4460,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-6">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Trust1.png" alt="100% Ayurvedic"
+                                            <img src="./Image/Trust1.avif" alt="100% Ayurvedic"
                                                 class="cert-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2245%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%8C%BF%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-family=%22Arial%22%3E100%25%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -4473,7 +4493,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-6">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Trust2.png" alt="GMP Certified"
+                                            <img src="./Image/Trust2.avif" alt="GMP Certified"
                                                 class="cert-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2245%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%E2%9C%93%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2218%22 font-family=%22Arial%22%3EGMP%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -4507,7 +4527,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-6">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Trust3.png" alt="ISO Approved"
+                                            <img src="./Image/Trust3.avif" alt="ISO Approved"
                                                 class="cert-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2245%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%8F%86%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2218%22 font-family=%22Arial%22%3EISO%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -4541,7 +4561,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-6">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Trust4.png" alt="FSSAI Compliant"
+                                            <img src="./Image/Trust4.avif" alt="FSSAI Compliant"
                                                 class="cert-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2245%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%9B%A1%EF%B8%8F%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22 font-family=%22Arial%22%3EFSSAI%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -4575,7 +4595,7 @@
                                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
                                     <div class="flex flex-col items-center text-center mb-6">
                                         <div class="relative mb-6">
-                                            <img src="./Image/Trust5.png" alt="No Harmful Chemicals"
+                                            <img src="./Image/Trust5.avif" alt="No Harmful Chemicals"
                                                 class="cert-image w-32 h-32 object-cover border-4 border-[var(--brand-muted)] shadow-lg"
                                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%234fa34f%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2245%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3E%F0%9F%9A%AB%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22 font-family=%22Arial%22%3EChemical%3C/text%3E%3C/svg%3E'">
                                             <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center"
@@ -4854,12 +4874,12 @@
 
                             <!-- Client Info -->
                             <div class="flex items-center gap-4 mb-6 relative z-10">
-                                <img src="./Image/Client1.png" alt="राजेश वर्मा"
+                                <img src="./Image/Client1.avif" alt="राजेश वर्मा"
                                     class="client-image w-20 h-20 object-cover border-4 border-white shadow-lg"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%234fa34f%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22 font-family=%22Arial%22%3ERV%3C/text%3E%3C/svg%3E'">
                                 <div>
                                     <h3 class="text-xl font-bold" style="color: var(--text-dark);">राजेश वर्मा</h3>
-                                    <p class="text-sm" style="color: var(--muted);">उम्र 46 • उत्तर प्रदेश</p>
+                                    <p class="text-sm" style="color: var(--muted);">उम्र 26 • उत्तर प्रदेश</p>
                                     <div class="flex gap-1 mt-1">
                                         <i class="fas fa-star star-icon text-sm"></i>
                                         <i class="fas fa-star star-icon text-sm"></i>
@@ -4902,12 +4922,12 @@
 
                             <!-- Client Info -->
                             <div class="flex items-center gap-4 mb-6 relative z-10">
-                                <img src="./Image/Client3.png" alt="सुनीता पटेल"
+                                <img src="./Image/Client3.avif" alt="सुनीता पटेल"
                                     class="client-image w-20 h-20 object-cover border-4 border-white shadow-lg"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%234fa34f%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22 font-family=%22Arial%22%3ESP%3C/text%3E%3C/svg%3E'">
                                 <div>
                                     <h3 class="text-xl font-bold" style="color: var(--text-dark);">सुनीता पटेल</h3>
-                                    <p class="text-sm" style="color: var(--muted);">उम्र 38 • गुजरात</p>
+                                    <p class="text-sm" style="color: var(--muted);">उम्र 48 • गुजरात</p>
                                     <div class="flex gap-1 mt-1">
                                         <i class="fas fa-star star-icon text-sm"></i>
                                         <i class="fas fa-star star-icon text-sm"></i>
@@ -4949,12 +4969,12 @@
 
                             <!-- Client Info -->
                             <div class="flex items-center gap-4 mb-6 relative z-10">
-                                <img src="./Image/Client2.png" alt="अमित शर्मा"
+                                <img src="./Image/Client2.avif" alt="अमित शर्मा"
                                     class="client-image w-20 h-20 object-cover border-4 border-white shadow-lg"
                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%234fa34f%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22 font-family=%22Arial%22%3EAS%3C/text%3E%3C/svg%3E'">
                                 <div>
                                     <h3 class="text-xl font-bold" style="color: var(--text-dark);">अमित शर्मा</h3>
-                                    <p class="text-sm" style="color: var(--muted);">उम्र 52 • राजस्थान</p>
+                                    <p class="text-sm" style="color: var(--muted);">उम्र 34 • राजस्थान</p>
                                     <div class="flex gap-1 mt-1">
                                         <i class="fas fa-star star-icon text-sm"></i>
                                         <i class="fas fa-star star-icon text-sm"></i>
