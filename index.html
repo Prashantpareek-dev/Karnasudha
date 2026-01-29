@@ -740,7 +740,7 @@
         .main-container {
             max-width: 450px;
             margin: 0 auto;
-            margin-bottom: 50px;
+            /* margin-bottom: 50p?x; */
             width: 100%;
         }
 
@@ -748,7 +748,7 @@
         @media (max-width: 450px) {
             .main-container {
                 max-width: 100%;
-                margin-bottom: 20px;
+                /* margin-bottom: 20px; */
             }
         }
 
@@ -2796,12 +2796,41 @@
                 </div>
             </div>
             <button
-                class="order-btn bg-warning text-black font-bold border-none px-6 py-3 rounded-lg text-xl cursor-pointer transition-all duration-300 hover:bg-opacity-80 max-[450px]:text-xl max-[450px]:px-4 max-[450px]:py-3 flex-shrink-0"
-                onclick="scrollToContact()">
-                <span class="animate-bounce text:black">🛒</span>
+                class="order-btn font-arya relative overflow-hidden bg-warning text-black font-bold border-none px-6 py-3 rounded-lg text-xl cursor-pointer transition-all duration-300 hover:bg-opacity-80 max-[450px]:text-xl max-[450px]:px-4 max-[450px]:py-3 flex-shrink-0"
+                onclick="scrollToContact()" aria-label="Order Now">
+                <span class="shine" aria-hidden="true"></span>
+                <span class="animate-bounce">🛒</span>
                 <span class="hidden lg:block md:block text-black">Order Now</span>
                 <span class="md:hidden text-black">Order</span>
             </button>
+        </header>
+
+        <style>
+        /* Header CTA shining effect */
+        .order-btn{position:relative;overflow:hidden;font-family:'Arya', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif}
+        .order-btn .shine{
+            position:absolute;
+            top:0;left:-80%;
+            width:40%;height:100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+            transition: left 0.9s ease;
+            pointer-events:none;
+            filter: blur(6px);
+            opacity:0.95;
+        }
+        .order-btn:hover .shine,
+        .order-btn:focus .shine{
+            left:150%;
+        }
+        .order-btn:focus{outline:none;box-shadow:0 6px 18px rgba(0,0,0,0.25), 0 0 0 6px rgba(250,204,21,0.12)}
+        .order-btn .animate-bounce{display:inline-block}
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce){
+            .order-btn .animate-bounce{animation:none}
+            .order-btn .shine{transition:none}
+        }
+        </style>
         </header>
 
         <!-- Main Content -->
@@ -5246,7 +5275,7 @@
         </main>
 
         <footer
-            class="bg-brand-primary relative text-white py-4 px-4 max-w-[456px] text-center max-[450px]:py-4 max-[450px]:px-3 pb-20 max-[450px]:pb-20">
+            class="bg-brand-primary relative text-white py-4 px-4 max-w-[456px] text-center max-[450px]:py-4 max-[450px]:px-3">
             <div class="text-sm mt-4 font-arya max-[450px]:text-xs max-[450px]:mt-2"
                 style="color: rgba(256,256,256,0.8)">
                 <p>⚠️ Disclaimer :-This product is not intended to
